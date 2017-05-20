@@ -16,4 +16,8 @@ class Database
         }
         echo 'Соединение установлено'. PHP_EOL;
     }
+    public static function close()
+    {
+        mysqli_close(self::$db_connect);
+    }
 }
