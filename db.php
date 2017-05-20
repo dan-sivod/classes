@@ -3,7 +3,6 @@
 class Database
 {
     public static $db_connect;
-    public static $db_select;
 
     public static function connection($host, $user, $password, $db_name)
     {
@@ -19,5 +18,12 @@ class Database
     public static function close()
     {
         mysqli_close(self::$db_connect);
+    }
+    public static function query($user_query)
+    {
+        $result_query = mysqli_query(self::$db_connect,$user_query);
+        if(!$result_query){
+            echo'Ошибка!';
+        }
     }
 }
