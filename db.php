@@ -23,7 +23,10 @@ class Database
     {
         $result_query = mysqli_query(self::$db_connect,$user_query);
         if(!$result_query){
-            echo'Ошибка!';
+            echo'Ошибка!'. PHP_EOL;
+            echo 'Код ошибки: ' . mysqli_connect_errno() . PHP_EOL;
+            echo 'Текст ошибки: ' . mysqli_connect_error() . PHP_EOL;
+            exit;
         }
     }
 }
