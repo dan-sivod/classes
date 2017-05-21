@@ -15,10 +15,12 @@ class Database
         }
         echo 'Соединение установлено'. PHP_EOL;
     }
+
     public static function close()
     {
         mysqli_close(self::$db_connect);
     }
+
     public static function query($user_query)
     {
         $result_query = mysqli_query(self::$db_connect,$user_query);
@@ -28,5 +30,6 @@ class Database
             echo 'Текст ошибки: ' . mysqli_connect_error() . PHP_EOL;
             exit;
         }
+        return $result_query_in_object=mysqli_fetch_object($result_query);
     }
 }
