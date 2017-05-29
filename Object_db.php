@@ -19,6 +19,12 @@ class Object_db
             die();
         }
         $result = $mysqli->query($user_query);
-        
+        if($result_object=$result->fetch_object()){
+            var_dump($result_object);
+        }
+        else{
+            die();
+        }
+        $mysqli->close();
     }
 }
