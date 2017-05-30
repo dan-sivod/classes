@@ -27,4 +27,15 @@ class Object_db
         }
         $mysqli->close();
     }
+    static public function connect($user_query)
+    {
+        $mysqli = new mysqli(self::settings());
+        if ($mysqli->connect_errno) {
+            die();
+        }
+    }
+    static public function close()
+    {
+        mysqli_close();
+    }
 }
