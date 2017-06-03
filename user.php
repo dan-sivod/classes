@@ -70,7 +70,7 @@
 
         public function set_password($user_password)
         {
-            $this->password = password_hash($user_password);
+            $this->password = password_hash($user_password,PASSWORD_DEFAULT);
 	    }
     }
 ?>
