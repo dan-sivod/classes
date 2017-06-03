@@ -1,6 +1,6 @@
 <?php
 
-class Object_db
+class object_db
 {
     static public $host = 'localhost';
     static public $user = 'root';
