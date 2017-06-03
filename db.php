@@ -1,6 +1,6 @@
 <?php
 
-class Database
+class db
 {
     public static $db_connect;
 
